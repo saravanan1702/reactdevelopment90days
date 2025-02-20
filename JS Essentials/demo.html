@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Hello Welcome</p>
+  <p>Hi How are you..</p>
+  <p>Learning java script is really fun</p>
+  <p id="demo">hey js</p>
+  <input type="text" class="demo" placeholder="enter name">
+  <script>
+
+    let para=document.querySelectorAll('p')
+    let ch=document.querySelector('.demo')
+    let ch1=document.getElementById('demo')
+  
+    para[1].innerHTML=`<h1>How are youuuu...</h1>`
+    //input field onchage whatever we type we changne spantionly 
+  ch.addEventListener('change',()=>{
+    let x=ch.value;
+    ch1.innerText=ch.value
+    console.log(ch.value)
+    if(x.endsWith('morning')){
+      alert("have a nice day dude...😁")
+      console.log('this is morning 9 to 12')
+    }else if(x.endsWith('afternoon')){
+      alert("how about this  day dude...😁")
+      console.log('this is morning 12 to 6')
+
+    }
+  })
+  ch1.onclick=function(){
+    ch1.textContent='hello javasacript is really fun...😁'
+  }
+  ch1.onclick=function(){
+    ch1.style.background='blue'
+  }
+
+  let createNewEl=document.createElement('h1')
+  createNewEl.textContent='hello this is new Element im created by javascript'
+  document.body.after(createNewEl)
+function outerFunction() {
+  let outerVariable = 'I am from outer scope';
+
+  function innerFunction() {
+    console.log(outerVariable);  // innerFunction has access to outerVariable
+  }
+
+  return innerFunction;  // Returning innerFunction as the closure
+}
+
+let cons=outerFunction()
+cons()
+
+  </script>
+</body>
+</html>
